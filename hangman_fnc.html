@@ -9,8 +9,6 @@ words = ['pancake', 'monkey', 'nose', 'javascript']
 function pickWord(x){
 	return x[Math.floor(Math.random()*x.length)]
 }
-word = pickWord(words)
-//console.log(word)
 function setupAnswerArray(x){
 	array=[]
 	for (i=0; i<x.length; i++){
@@ -19,11 +17,13 @@ function setupAnswerArray(x){
 	return array
 }
 
-remainingWord = word.length
-answerArray = setupAnswerArray(word)
-cnt = []
-//console.log(word + ', ' + remainingWord)
 main = function(){
+	word = pickWord(words)
+	//console.log(word)
+	remainingWord = word.length
+	answerArray = setupAnswerArray(word)
+	cnt = []
+	//console.log(word + ', ' + remainingWord)
 	while ((10-cnt.length>0) && (remainingWord>0)){
 		alert(answerArray.join(' ') + '\n\n' + 'remaining : ' + (10-cnt.length))
 		guess = prompt("Guess a letter, or click Cancel to stop playing")
@@ -52,12 +52,20 @@ main = function(){
 	}
 	if (remainingWord==0){
 		alert(answerArray.join(' ') +'! '+ 'Success!')
+		
 	}
 	else if ((10-cnt.length)<1) {
 		alert('You guess 10 times more. Try it later.')
 	}
 }
 main()
+
+/*
+TryMore = confirm('Try more?')
+if (TryMore) {
+	main()
+}
+*/
 </script>
 </body>
 </html>
