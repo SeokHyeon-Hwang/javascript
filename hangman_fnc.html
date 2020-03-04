@@ -57,15 +57,17 @@ main = function(){
 	else if ((10-cnt.length)<1) {
 		alert('You guess 10 times more. Try it later.')
 	}
+	
+	TryMore = confirm('Try more?')
+	if (TryMore) {
+		main()
+	}
+
 }
 main()
 
-/*
-TryMore = confirm('Try more?')
-if (TryMore) {
-	main()
-}
-*/
+
+
 </script>
 </body>
 </html>
